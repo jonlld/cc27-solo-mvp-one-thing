@@ -1,3 +1,4 @@
+// if not in same directly, add path argument to config
 require("dotenv").config();
 
 // KNEXFILE NOTES:

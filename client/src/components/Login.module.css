@@ -1,0 +1,32 @@
+/* CSS custom properties! Variables */
+/* define scope as root, then use var(--...) notation */
+:root {
+  --dark-navy: #222831;
+  --light-navy: #30475e;
+  --grey: #dddddd;
+  --dark-grey: #3b3b3b;
+  --reddish: #f05454;
+}
+
+.login-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.form-control {
+  padding: 20px;
+}
+
+/* descendent selectors */
+.form-control label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control input {
+  width: 100%;
+  padding: 8px 16px;
+  margin-bottom: 24px;
+}
