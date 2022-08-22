@@ -8,6 +8,7 @@ exports.up = function (knex) {
     table.string("description", 32).notNullable();
     table.dateTime("checked_in").notNullable().defaultTo(knex.fn.now()); // auto-generate date
     table.boolean("archived").notNullable();
+    table.integer("user_id").notNullable();
     table.foreign("user_id").references("id").inTable("users"); // foreign key
   });
 };

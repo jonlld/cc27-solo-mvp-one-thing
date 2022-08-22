@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+// require("dotenv").config();
 
 // for production or dev ports
 const PORT = process.env.PORT || 3030;
@@ -26,4 +27,5 @@ app.get("/things", () => {}); // get data on active thing
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
+  // console.log(process.env);
 });
