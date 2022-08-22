@@ -1,0 +1,14 @@
+/* global */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #222831;
+}
+
+body {
+  margin: 0;
+}

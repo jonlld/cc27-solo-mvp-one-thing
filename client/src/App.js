@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import Login from "./components/Login";
 import Main from "./components/Main";
 
-function App() {
+// global CSS
+import "./index.css";
+
+const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
@@ -11,6 +14,6 @@ function App() {
       {isLoggedIn && <Main />}
     </div>
   );
-}
+};
 
 export default App;
