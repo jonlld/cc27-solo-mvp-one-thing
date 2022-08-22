@@ -7,17 +7,31 @@ function Login(props) {
   const nameInputRef = useRef();
   const pswdInputRef = useRef();
 
-  const loginHandler = (e) => {
+  const loginHandler = async (e) => {
     e.preventDefault();
 
     // using REFs to read the DOM directly
     const enteredName = nameInputRef.current.value;
     const enteredPswd = pswdInputRef.current.value;
+    const formData = { name: enteredName, pswd: enteredPswd };
 
-    console.log(enteredName, enteredPswd);
+    const options = {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
 
-    // set login to true and raise state
-    props.onLogin(true);
+    // backend check for credentials - hardcode local host for now
+    // /users/save = backlog
+    const res = await fetch("http://localhost:3030/users/login", options);
+    const data = await res.json();
+
+    // log data and update state based on server response!
+    console.log(data);
+
+    // props.onLogin(true);
   };
 
   return (

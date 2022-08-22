@@ -17,8 +17,14 @@ app.use(express.urlencoded({ extended: true })); // form-encoded
 
 // probably don't need controller / model here as small - keep logic here for now!
 
-// user
-app.post("/users/login", () => {}); // login user
+// USERS
+
+// login
+app.post("/users/login", () => {
+  console.log("post request received - user ok!");
+});
+
+// THINGS
 
 // thing
 app.get("/things", () => {}); // get data on active thing
