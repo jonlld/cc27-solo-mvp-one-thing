@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "knex": "knex",
+    "knex-init": "knex init",
+    "migrate-latest": "npx knex migrate:latest --knexfile ./db/knexfile.js",
+    "migrate-down": "npx knex migrate:down --knexfile ./db/knexfile.js",
+    "seed-data": "npx knex seed:run --knexfile ./db/knexfile.js"
   },
   "keywords": [],
   "author": "",
