@@ -1,4 +1,4 @@
-/* CSS custom properties! Variables */
+/* CSS custom properties */
 /* define scope as root, then use var(--...) notation */
 :root {
   --dark-navy: #222831;
