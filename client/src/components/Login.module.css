@@ -19,6 +19,10 @@
   padding: 20px;
 }
 
+.form-control.error label {
+  color: var(--reddish);
+}
+
 /* descendent selectors */
 .form-control label {
   display: block;

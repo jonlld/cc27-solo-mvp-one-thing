@@ -1,8 +1,11 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import Card from "../UI/Card";
 import classes from "./Login.module.css";
 
-function Login(props) {
+const Login = (props) => {
+  // check errors
+  const [isError, setIsError] = useState(false);
+
   // Refs
   const nameInputRef = useRef();
   const pswdInputRef = useRef();
@@ -29,7 +32,11 @@ function Login(props) {
     const data = await res.json();
 
     // log data and update state based on server response!
-    console.log(data);
+    if (data === "Invalid credentials") {
+      setIsError(true);
+    } else {
+      props.onLogin(true);
+    }
 
     // Update DOM
     // nameInputRef.current.value = "";
@@ -40,7 +47,10 @@ function Login(props) {
     <Card>
       <div className={classes["login-container"]}>
         <h1>One | Thing</h1>
-        <form className={classes["form-control"]} onSubmit={loginHandler}>
+        <form
+          className={`${classes["form-control"]} ${isError && classes.error}`}
+          onSubmit={loginHandler}
+        >
           <label htmlFor="name">Name</label>
           <input
             type="text"
@@ -60,6 +70,6 @@ function Login(props) {
       </div>
     </Card>
   );
-}
+};
 
 export default Login;
