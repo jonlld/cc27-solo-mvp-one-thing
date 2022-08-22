@@ -8,9 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "knex": "knex",
     "knex-init": "knex init",
-    "migrate-latest": "npx knex migrate:latest --knexfile ./db/knexfile.js",
-    "migrate-down": "npx knex migrate:down --knexfile ./db/knexfile.js",
-    "seed-data": "npx knex seed:run --knexfile ./db/knexfile.js"
+    "migrate-latest": "npx knex migrate:latest --knexfile ./knexfile.js",
+    "migrate-down": "npx knex migrate:down --knexfile ./knexfile.js",
+    "seed-data": "npx knex seed:run --knexfile ./knexfile.js"
   },
   "keywords": [],
   "author": "JLD",

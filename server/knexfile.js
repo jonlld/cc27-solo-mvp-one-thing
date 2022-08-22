@@ -15,9 +15,9 @@ module.exports = {
       password: process.env.PG_PASSWORD,
     },
     migrations: {
-      directory: "./migrations",
+      directory: "./db/migrations",
     },
-    seeds: { directory: "./seeds" },
+    seeds: { directory: "./db/seeds" },
   },
 
   production: {
@@ -27,10 +27,10 @@ module.exports = {
       ssl: { rejectUnauthorized: false },
     },
     migrations: {
-      directory: "./migrations",
+      directory: "./db/migrations",
     },
     seeds: {
-      directory: "./seeds",
+      directory: "./db/seeds",
     },
   },
 };
