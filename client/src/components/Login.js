@@ -34,40 +34,43 @@ const Login = (props) => {
     // log data and update state based on server response!
     if (data === "Invalid credentials") {
       setIsError(true);
+      nameInputRef.current.value = "";
+      pswdInputRef.current.value = "";
     } else {
+      // raise state to switch component
       props.onLogin(true);
     }
-
-    // Update DOM
-    // nameInputRef.current.value = "";
-    // pswdInputRef.current.value = "";
   };
 
   return (
     <Card>
-      <div className={classes["login-container"]}>
-        <h1>One | Thing</h1>
-        <form
-          className={`${classes["form-control"]} ${isError && classes.error}`}
-          onSubmit={loginHandler}
-        >
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            placeholder="name"
-            ref={nameInputRef}
-          ></input>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="pswd"
-            ref={pswdInputRef}
-          ></input>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
+      {/* <div className={classes["login-container"]}> */}
+      <h1>One | Thing</h1>
+      <form
+        className={`${classes["form-control"]} ${isError && classes.error}`}
+        onSubmit={loginHandler}
+      >
+        <label htmlFor="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="name"
+          ref={nameInputRef}
+        ></input>
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="pswd"
+          ref={pswdInputRef}
+        ></input>
+        <button type="submit">Submit</button>
+        {isError && (
+          <p className={classes["error-msg"]}>
+            Login incorrect, please try again!
+          </p>
+        )}
+      </form>
     </Card>
   );
 };

@@ -1,3 +1,4 @@
+/* container to centre the card */
 .container {
   display: flex;
   align-items: center;
@@ -5,10 +6,15 @@
   height: 100vh;
 }
 
+/* card which is a flex container to center items */
 .card {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   background-color: #fff;
   padding: 20px;
   min-width: 700px;
+  min-height: 400px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
