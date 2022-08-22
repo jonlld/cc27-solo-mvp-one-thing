@@ -1,5 +1,11 @@
 require("dotenv").config();
 
+// KNEXFILE NOTES:
+// scripts will look to the knexfile for info
+// here - tells knex where the seed and migration files go
+// also - database information (type, how to connect etc.)
+// also - environment variables are loaded in (for local) by .env.local (dotenv package)
+
 module.exports = {
   development: {
     client: "pg",
@@ -9,9 +15,9 @@ module.exports = {
       password: process.env.PG_PASSWORD,
     },
     migrations: {
-      directory: "./db/migrations",
+      directory: "./migrations",
     },
-    seeds: { directory: "./db/seeds" },
+    seeds: { directory: "./seeds" },
   },
 
   production: {
@@ -21,10 +27,10 @@ module.exports = {
       ssl: { rejectUnauthorized: false },
     },
     migrations: {
-      directory: "./db/migrations",
+      directory: "./migrations",
     },
     seeds: {
-      directory: "./db/seeds",
+      directory: "./seeds",
     },
   },
 };
