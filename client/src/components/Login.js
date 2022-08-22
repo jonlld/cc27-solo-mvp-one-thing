@@ -10,7 +10,7 @@ function Login(props) {
   const loginHandler = async (e) => {
     e.preventDefault();
 
-    // using REFs to read the DOM directly
+    // Read DOM
     const enteredName = nameInputRef.current.value;
     const enteredPswd = pswdInputRef.current.value;
     const formData = { name: enteredName, pswd: enteredPswd };
@@ -31,7 +31,9 @@ function Login(props) {
     // log data and update state based on server response!
     console.log(data);
 
-    // props.onLogin(true);
+    // Update DOM
+    // nameInputRef.current.value = "";
+    // pswdInputRef.current.value = "";
   };
 
   return (

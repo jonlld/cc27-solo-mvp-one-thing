@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-// require("dotenv").config();
+const userModel = require("./users/user.model");
 
 // for production or dev ports
 const PORT = process.env.PORT || 3030;
@@ -20,8 +20,16 @@ app.use(express.urlencoded({ extended: true })); // form-encoded
 // USERS
 
 // login
-app.post("/users/login", (req, res) => {
+app.post("/users/login", async (req, res) => {
   const { name, pswd } = req.body;
+
+  const userData = await userModel.login(name, pswd);
+
+  if (userData.length === 0) {
+    res.send(JSON.stringify("Invalid credentials"));
+  } else {
+    res.send(userData[0]);
+  }
 });
 
 // THINGS
@@ -33,5 +41,4 @@ app.get("/things", () => {}); // get data on active thing
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
-  // console.log(process.env);
 });
