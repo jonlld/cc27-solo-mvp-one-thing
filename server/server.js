@@ -20,8 +20,8 @@ app.use(express.urlencoded({ extended: true })); // form-encoded
 // USERS
 
 // login
-app.post("/users/login", () => {
-  console.log("post request received - user ok!");
+app.post("/users/login", (req, res) => {
+  const { name, pswd } = req.body;
 });
 
 // THINGS
