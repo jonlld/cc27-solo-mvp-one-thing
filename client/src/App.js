@@ -10,7 +10,7 @@ const App = () => {
 
   return (
     <div>
-      {!isLoggedIn && <Login />}
+      {!isLoggedIn && <Login onLogin={setIsLoggedIn} />}
       {isLoggedIn && <Main />}
     </div>
   );

@@ -1,8 +1,8 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import Card from "../UI/Card";
 import classes from "./Login.module.css";
 
-function Login() {
+function Login(props) {
   // Refs
   const nameInputRef = useRef();
   const pswdInputRef = useRef();
@@ -15,6 +15,9 @@ function Login() {
     const enteredPswd = pswdInputRef.current.value;
 
     console.log(enteredName, enteredPswd);
+
+    // set login to true and raise state
+    props.onLogin(true);
   };
 
   return (
