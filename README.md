@@ -4,37 +4,33 @@
 
 ## Project Setup
 
-In `/server` and `/client`, run
+In `/server` and `/client`, run:
 
 ```shell
 $ npm install
 ```
 
-Then, set up your local database.
+Then, set up your local database:
 
 In psql CLI, run:
 
 ```shell
-CREATE DATABASE onething;
+CREATE DATABASE one_thing;
 ```
 
-In `server/db`, run
+Connect to the db; at the prompt, create a user called 'one_thing':
+`CREATE USER one_thing;`
+
+To initialise the database, run the following script from `server`:
 
 ```shell
-knex migrate:latest
+npm run migrate-latest
 ```
 
-Create `.env.local` file in `server/db`. Write information below.
+Create `.env.local` file in `server` and populate as below:
 
 ```
-DB_USER=YOUR PSQL USERNAME
-DB_PASSWORD=YOUR PSQL PASSWORD
-DB_NAME=kanjify
-```
-
-After installing those libraries, you should be able to run the app.
-In `/client` and `/server`, run:
-
-```shell
-$ npm start
+PG_DATABASE = one_thing
+PG_USER = one_thing
+PG_PASSWORD = null
 ```
