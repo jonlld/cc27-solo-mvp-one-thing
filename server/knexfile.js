@@ -1,47 +1,30 @@
-// Update with your config settings.
+require("dotenv").config();
 
-/**
- * @type { Object.<string, import("knex").Knex.Config> }
- */
 module.exports = {
-
   development: {
-    client: 'sqlite3',
+    client: "pg",
     connection: {
-      filename: './dev.sqlite3'
-    }
-  },
-
-  staging: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
+      database: process.env.PG_DATABASE,
+      user: process.env.PG_USER,
+      password: process.env.PG_PASSWORD,
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
+      directory: "./db/migrations",
+    },
+    seeds: { directory: "./db/seeds" },
   },
 
   production: {
-    client: 'postgresql',
+    client: "pg",
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
+      connectionString: process.env.DATABASE_URL, // heroku addons
+      ssl: { rejectUnauthorized: false },
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
-  }
-
+      directory: "./db/migrations",
+    },
+    seeds: {
+      directory: "./db/seeds",
+    },
+  },
 };
