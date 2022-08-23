@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require("cors");
+// const cors = require("cors");
 const usersModel = require("./users/users.model");
 const thingsModel = require("./things/things.model");
 
@@ -10,7 +10,7 @@ const app = express();
 
 // ***** MIDDLEWARE *****
 
-app.use(cors()); // for front and back on localhost
+// app.use(cors()); // for front and back on localhost
 app.use(express.json()); // JSON
 app.use(express.urlencoded({ extended: true })); // form-encoded
 
