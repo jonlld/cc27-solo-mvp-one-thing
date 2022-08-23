@@ -13,10 +13,10 @@
   justify-content: space-around;
   background-color: #fff;
   padding: 20px;
-  min-width: 800px;
-  /* fixed height for now */
   height: 500px;
+  width: 800px;
   border: 1px solid #ccc;
   border-radius: 5px;
   overflow: scroll;
+  transition: width 2s, height 4s;
 }

@@ -22,7 +22,7 @@ const Stats = ({ viewStats, fetchEntries, entries }) => {
     const userGreeting = `Hey, ${entries[0].name}. Good job on this!`;
 
     return (
-      <Card className={classes.flexColumn}>
+      <Card className={classes["card-adjust"]}>
         {/* TODO make header sticky */}
         <header className={classes.header}>
           <h1>{userGreeting}</h1>

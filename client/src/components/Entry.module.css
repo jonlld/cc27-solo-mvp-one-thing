@@ -1,11 +1,8 @@
 .entry-container {
-  padding: 24px;
+  padding: 12px;
   display: flex;
   justify-content: space-between;
-  gap: 8px;
-  /* background-color: var(--grey); */
-  /* border-radius: 5px; */
-  margin-bottom: 12px;
+  gap: 14px;
 }
 
 .item-container {
@@ -13,6 +10,7 @@
   padding: 12px;
   text-align: center;
   color: #fff;
+  text-transform: uppercase;
   background-color: var(--reddish);
   border-radius: 5px;
   box-shadow: 0 2px 8px rgba(204, 204, 204, 0.419);
