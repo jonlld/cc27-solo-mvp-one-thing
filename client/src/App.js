@@ -35,6 +35,16 @@ const App = () => {
     setIsViewStats(true);
   };
 
+  const logoutHandler = () => {
+    // reset all state
+    setIsLoggedIn(false);
+    setLoggedInUserName("");
+    setLoggedInUserId("");
+    setIsCheckedIn(false);
+    setIsViewStats(false);
+    setEntries([]);
+  };
+
   // Conditional Renders for Stats, or Login / Main
   if (isCheckedIn) {
     return (
@@ -42,6 +52,7 @@ const App = () => {
         viewStats={isViewStats}
         fetchEntries={fetchEntriesHandler}
         entries={entries}
+        logout={logoutHandler}
       />
     );
   } else {

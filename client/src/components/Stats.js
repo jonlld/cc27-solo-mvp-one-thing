@@ -4,7 +4,7 @@ import Entry from "./Entry";
 
 import classes from "./Stats.module.css";
 
-const Stats = ({ viewStats, fetchEntries, entries }) => {
+const Stats = ({ viewStats, fetchEntries, entries, logout }) => {
   if (!viewStats) {
     // ***** CHECKED-IN VIEW
     return (
@@ -25,7 +25,10 @@ const Stats = ({ viewStats, fetchEntries, entries }) => {
       <Card className={classes["card-adjust"]}>
         <header className={classes.header}>
           <h1>
-            {userGreeting} <a className={classes.logout}>logout</a>
+            {userGreeting}{" "}
+            <a className={classes.logout} onClick={logout}>
+              logout
+            </a>
           </h1>
           <hr />
         </header>
