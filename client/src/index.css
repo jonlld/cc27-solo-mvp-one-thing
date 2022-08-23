@@ -1,4 +1,13 @@
 /* global */
+/* CSS custom properties */
+/* define scope as root, then use var(--...) notation */
+:root {
+  --dark-navy: #222831;
+  --light-navy: #30475e;
+  --grey: #dddddd;
+  --dark-grey: #3b3b3b;
+  --reddish: #f05454;
+}
 
 * {
   box-sizing: border-box;

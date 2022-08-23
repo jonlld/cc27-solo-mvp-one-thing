@@ -1,11 +1,6 @@
-/* CSS custom properties */
-/* define scope as root, then use var(--...) notation */
-:root {
-  --dark-navy: #222831;
-  --light-navy: #30475e;
-  --grey: #dddddd;
-  --dark-grey: #3b3b3b;
-  --reddish: #f05454;
+h1 {
+  font-size: 38px;
+  text-transform: uppercase;
 }
 
 .form-control {
@@ -50,8 +45,8 @@ button:focus {
 
 .error-msg {
   position: absolute;
-  right: 113px;
-  bottom: -16px;
+  right: 114px;
+  bottom: -20px;
   font-size: 12px;
   color: var(--reddish);
 }
