@@ -31,6 +31,8 @@ const App = () => {
     // use data to set state
     // console.log("data received from server: ", data); // ok
     setEntries(data);
+
+    setIsViewStats(true);
   };
 
   // Conditional Renders for Stats, or Login / Main
@@ -38,7 +40,6 @@ const App = () => {
     return (
       <Stats
         viewStats={isViewStats}
-        setViewStats={setIsViewStats}
         fetchEntries={fetchEntriesHandler}
         entries={entries}
       />
