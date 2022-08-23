@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Card from "../UI/Card";
 import classes from "./Main.module.css";
 
@@ -7,7 +7,6 @@ const randomIndex = Math.floor(Math.random() * 5);
 const randomGreeting = greetings[randomIndex];
 
 const Main = ({ username, userId }) => {
-  const [taskIsActive, setTaskIsActive] = useState(false);
   const [isCheckedIn, setIsCheckedIn] = useState();
 
   // Refs
@@ -17,21 +16,27 @@ const Main = ({ username, userId }) => {
     e.preventDefault();
 
     const thing = thingInputRef.current.value;
-    console.log("thing: ", thing);
 
-    const options = {
-      method: "POST",
-      body: JSON.stringify({ thing: thing, id: userId }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
+    if (thing.length === 0) {
+      alert("please input a thing to do");
+    } else {
+      const options = {
+        method: "POST",
+        body: JSON.stringify({ thing: thing, id: userId }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
 
-    const res = await fetch("http://localhost:3030/things/save", options);
-    const data = await res.json();
+      const res = await fetch("http://localhost:3030/things/save", options);
+      const data = await res.json();
 
-    // // TODO update state once saved to db
-    console.log(data); // ok
+      // set state
+      setIsCheckedIn(true);
+
+      // clear input
+      thingInputRef.current.value = "";
+    }
   };
 
   // Card is a flex container

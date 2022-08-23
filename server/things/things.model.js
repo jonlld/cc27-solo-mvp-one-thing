@@ -1,11 +1,10 @@
 const knex = require("../knex");
 const THINGS_TABLE = "things";
 
-// BUG sending undefined
 module.exports = {
   create: function (newItem) {
     return knex(THINGS_TABLE)
-      .insert(newItem, ["description", "user_id"])
+      .insert(newItem, ["description", "user_id", "checked_in"])
       .then((res) => res[0]);
   },
 };
