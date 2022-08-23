@@ -6,22 +6,19 @@ import classes from "./Stats.module.css";
 
 const Stats = ({ viewStats, fetchEntries, entries, totalEntries, logout }) => {
   if (!viewStats) {
-    // ***** CHECKED-IN VIEW
+    // ***** CHECKED-IN VIEW *****
     return (
       <Card>
         <div>
-          <h1 className={classes.title}>All Done!</h1>
+          <h1 className={classes.title}>All | Done</h1>
           <button className={classes.stats} onClick={fetchEntries}>
-            View Stats
+            View Stats?
           </button>
         </div>
       </Card>
     );
   } else {
-    // ***** ENTRIES VIEW
-    const userGreeting = `Hey, ${entries[0].name}.
-    You have tallied ${totalEntries} times! Great job!`;
-
+    // ***** ENTRIES VIEW *****
     return (
       <Card className={classes["card-adjust"]}>
         <header className={classes.header}>

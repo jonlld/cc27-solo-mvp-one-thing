@@ -28,6 +28,7 @@ const App = () => {
       method: "GET",
     });
     const data = await res.json();
+    console.log("entries from server: ", data);
 
     // get total # of entries by loggedInUser
     const numEntries = data.reduce((count, curr) => ++count, 0);
