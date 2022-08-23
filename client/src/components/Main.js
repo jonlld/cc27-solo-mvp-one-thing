@@ -6,17 +6,18 @@ const greetings = ["Hi", "Go", "Yo", "Konnichiwa", "Hola"];
 const randomIndex = Math.floor(Math.random() * 5);
 const randomGreeting = greetings[randomIndex];
 
-const Main = ({ username, userId }) => {
-  const [isCheckedIn, setIsCheckedIn] = useState();
-
-  // Refs
+const Main = ({ username, userId, onCheckedIn }) => {
+  // Ref
   const thingInputRef = useRef();
 
+  // Handle Check-in
   const submitHandler = async (e) => {
     e.preventDefault();
 
     const thing = thingInputRef.current.value;
 
+    // if no entry, error
+    // else, post to API and udpate state
     if (thing.length === 0) {
       alert("please input a thing to do");
     } else {
@@ -31,10 +32,10 @@ const Main = ({ username, userId }) => {
       const res = await fetch("http://localhost:3030/things/save", options);
       const data = await res.json();
 
-      // set state
-      setIsCheckedIn(true);
+      // update checked-in state
+      onCheckedIn(true);
 
-      // clear input
+      // clear inputs
       thingInputRef.current.value = "";
     }
   };
