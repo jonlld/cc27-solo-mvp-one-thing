@@ -21,7 +21,8 @@ const App = () => {
   const fetchEntriesHandler = async () => {
     // fetch data
     const res = await fetch(
-      `https://one-thing-server.herokuapp.com/things/view/${loggedInUserId}`,
+      // `https://one-thing-server.herokuapp.com/things/view/${loggedInUserId}`,
+      `http://localhost:3030/things/view/${loggedInUserId}`,
       {
         method: "GET",
       }
@@ -29,7 +30,6 @@ const App = () => {
     const data = await res.json();
 
     // use data to set state
-    // console.log("data received from server: ", data); // ok
     setEntries(data);
 
     setIsViewStats(true);

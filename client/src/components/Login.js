@@ -28,7 +28,8 @@ const Login = (props) => {
 
     // backend check for credentials
     const res = await fetch(
-      "https://one-thing-server.herokuapp.com/users/login",
+      // "https://one-thing-server.herokuapp.com/users/login",
+      "http://localhost:3030/users/login",
       options
     );
     const data = await res.json();

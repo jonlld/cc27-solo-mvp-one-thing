@@ -30,7 +30,8 @@ const Main = ({ username, userId, onCheckedIn }) => {
       };
 
       const res = await fetch(
-        "https://one-thing-server.herokuapp.com/things/save",
+        // "https://one-thing-server.herokuapp.com/things/save",
+        "http://localhost:3030/things/save",
         options
       );
       const data = await res.json();
