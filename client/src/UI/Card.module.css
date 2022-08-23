@@ -17,6 +17,7 @@
   width: 800px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  overflow: scroll;
-  transition: width 2s, height 4s;
+  /* overflow: scroll; */
+  overflow: auto;
+  transition: width 2s, height 2s;
 }

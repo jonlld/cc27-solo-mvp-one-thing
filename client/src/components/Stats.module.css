@@ -5,9 +5,16 @@
   text-transform: uppercase;
 }
 
-/* .greeting {
+/* LOGOUT LINK */
+.logout {
+  cursor: pointer;
+  position: absolute;
+  right: 25px;
+  top: 38px;
+  font-size: 14px;
+  font-style: italic;
   color: var(--dark-navy);
-} */
+}
 
 /* BUTTON */
 .stats {
@@ -26,13 +33,15 @@
 
 /* adjust <Card> to stack vertically, also size */
 .card-adjust {
-  height: 650px;
-  width: 1000px;
+  height: 700px;
+  width: 1200px;
   flex-direction: column;
   justify-content: flex-start;
 }
 
 .header {
+  /* TODO make sticky */
+  position: sticky;
   width: 100%;
 }
 

@@ -19,13 +19,14 @@ const Stats = ({ viewStats, fetchEntries, entries }) => {
     );
   } else {
     // ***** ENTRIES VIEW
-    const userGreeting = `Hey, ${entries[0].name}. Good job on this!`;
+    const userGreeting = `Hey, ${entries[0].name}. Great job on this!`;
 
     return (
       <Card className={classes["card-adjust"]}>
-        {/* TODO make header sticky */}
         <header className={classes.header}>
-          <h1>{userGreeting}</h1>
+          <h1>
+            {userGreeting} <a className={classes.logout}>logout</a>
+          </h1>
           <hr />
         </header>
         <div className={classes["entries-container"]}>
