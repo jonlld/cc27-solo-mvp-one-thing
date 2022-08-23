@@ -13,10 +13,11 @@ const Main = ({ username, userId }) => {
   // Refs
   const thingInputRef = useRef();
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
 
     const thing = thingInputRef.current.value;
+    console.log("thing: ", thing);
 
     const options = {
       method: "POST",
@@ -26,9 +27,11 @@ const Main = ({ username, userId }) => {
       },
     };
 
-    const res = await fetch('http://localhost:3030/things/save', options);
-    const data = await res.json();
-    console.log(data);
+    const res = await fetch("http://localhost:3030/things/save", options);
+    // const data = await res.json();
+
+    // // TODO update state once saved to db
+    // console.log(data);
   };
 
   // Card is a flex container
@@ -43,7 +46,12 @@ const Main = ({ username, userId }) => {
       <div>
         <form className={classes["form-control"]} onSubmit={submitHandler}>
           <label htmlFor="thing">Choose your thing!</label>
-          <input type="text" id="thing" placeholder="My focus is..." />
+          <input
+            type="text"
+            id="thing"
+            placeholder="My focus is..."
+            ref={thingInputRef}
+          />
           <button type="submit" className={classes["check-in-button"]}>
             Done
           </button>

@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-const userModel = require("./users/user.model");
+const usersModel = require("./users/users.model");
+const thingsModel = require("./things/things.model");
 
 // for production or dev ports
 const PORT = process.env.PORT || 3030;
@@ -23,7 +24,7 @@ app.use(express.urlencoded({ extended: true })); // form-encoded
 app.post("/users/login", async (req, res) => {
   const { name, pswd } = req.body;
 
-  const userData = await userModel.login(name, pswd);
+  const userData = await usersModel.login(name, pswd);
 
   if (userData.length === 0) {
     res.send(JSON.stringify("Invalid credentials"));
@@ -34,8 +35,15 @@ app.post("/users/login", async (req, res) => {
 
 // THINGS
 
-// thing
-app.get("/things", () => {}); // get data on active thing
+// add entry to db
+app.post("/things/save", async (req, res) => {
+  const { thing } = req.body;
+  console.log("thing in server: ", thing); // ok
+
+  // const newEntry = await thingsModel.create(thing);
+
+  // console.log(newEntry);
+});
 
 // ***** LISTEN ********
 
