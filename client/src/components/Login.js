@@ -37,14 +37,16 @@ const Login = (props) => {
       nameInputRef.current.value = "";
       pswdInputRef.current.value = "";
     } else {
-      // raise state to switch component
+      // update state to set user and change status
+      console.log("data", data);
+      props.idOnLogin(data.id);
+      props.nameOnLogin(data.name);
       props.onLogin(true);
     }
   };
 
   return (
     <Card>
-      {/* <div className={classes["login-container"]}> */}
       <h1>One | Thing</h1>
       <form
         className={`${classes["form-control"]} ${isError && classes.error}`}

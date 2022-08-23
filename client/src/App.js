@@ -7,11 +7,21 @@ import "./index.css";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [loggedInUserName, setLoggedInUserName] = useState("");
+  const [loggedInUserId, setLoggedInUserId] = useState("");
 
   return (
     <div>
-      {!isLoggedIn && <Login onLogin={setIsLoggedIn} />}
-      {isLoggedIn && <Main />}
+      {!isLoggedIn && (
+        <Login
+          onLogin={setIsLoggedIn}
+          nameOnLogin={setLoggedInUserName}
+          idOnLogin={setLoggedInUserId}
+        />
+      )}
+      {isLoggedIn && (
+        <Main username={loggedInUserName} userId={loggedInUserId} />
+      )}
     </div>
   );
 };
