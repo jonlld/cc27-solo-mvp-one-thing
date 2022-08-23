@@ -33,7 +33,7 @@ const Stats = ({ viewStats, fetchEntries, entries, totalEntries, logout }) => {
         </header>
         <div className={classes["entries-container"]}>
           {entries.map((entry) => {
-            return <Entry entry={entry} />;
+            return <Entry key={entry.id} entry={entry} />;
           })}
         </div>
       </Card>

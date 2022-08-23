@@ -17,7 +17,7 @@ const App = () => {
   // Stats State
   const [isCheckedIn, setIsCheckedIn] = useState(false); // show checked-in
   const [isViewStats, setIsViewStats] = useState(false); // show entries
-  const [entries, setEntries] = useState([]);
+  const [entries, setEntries] = useState([]); // entries, including unique ID for key
 
   const [numOfEntries, setNumOfEntries] = useState(0);
 
@@ -28,7 +28,6 @@ const App = () => {
       method: "GET",
     });
     const data = await res.json();
-    console.log("entries from server: ", data);
 
     // get total # of entries by loggedInUser
     const numEntries = data.reduce((count, curr) => ++count, 0);
