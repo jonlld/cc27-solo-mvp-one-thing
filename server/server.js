@@ -17,7 +17,6 @@ app.use(express.urlencoded({ extended: true })); // form-encoded
 // ***** ROUTES *********
 
 // USERS
-
 app.post("/users/login", async (req, res) => {
   const { name, pswd } = req.body;
 
@@ -31,7 +30,6 @@ app.post("/users/login", async (req, res) => {
 });
 
 // THINGS
-
 app.post("/things/save", async (req, res) => {
   const { thing, id } = req.body;
 
