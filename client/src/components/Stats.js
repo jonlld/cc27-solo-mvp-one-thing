@@ -2,15 +2,12 @@ import React, { useState } from "react";
 import Card from "../UI/Card";
 import classes from "./Stats.module.css";
 
-const Stats = () => {
-  const [isViewStats, setIsViewStats] = useState(false);
-
+const Stats = ({ viewStats, onViewStats }) => {
   const viewStatsHandler = (e) => {
-    e.preventDefault();
-    setIsViewStats(true);
+    onViewStats(true);
   };
 
-  if (!isViewStats) {
+  if (!viewStats) {
     return (
       <Card>
         <div>

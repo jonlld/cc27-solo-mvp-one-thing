@@ -11,9 +11,10 @@ const App = () => {
   const [loggedInUserName, setLoggedInUserName] = useState("");
   const [loggedInUserId, setLoggedInUserId] = useState("");
   const [isCheckedIn, setIsCheckedIn] = useState(false);
+  const [isViewStats, setIsViewStats] = useState(false);
 
   if (isCheckedIn) {
-    return <Stats />;
+    return <Stats viewStats={isViewStats} onViewStats={setIsViewStats} />;
   } else {
     return (
       <div>
