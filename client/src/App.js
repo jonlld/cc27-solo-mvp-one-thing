@@ -29,7 +29,8 @@ const App = () => {
     const data = await res.json();
 
     // use data to set state
-    console.log("data received from server: ", data);
+    // console.log("data received from server: ", data); // ok
+    setEntries(data);
   };
 
   // Conditional Renders for Stats, or Login / Main
@@ -39,6 +40,7 @@ const App = () => {
         viewStats={isViewStats}
         setViewStats={setIsViewStats}
         fetchEntries={fetchEntriesHandler}
+        entries={entries}
       />
     );
   } else {

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Card from "../UI/Card";
+import Entry from "./Entry";
+
 import classes from "./Stats.module.css";
 
-const Stats = ({ viewStats, setViewStats, fetchEntries }) => {
+const Stats = ({ viewStats, setViewStats, fetchEntries, entries }) => {
   const viewStatsHandler = (e) => {
     setViewStats(true);
     // trigger fetch request handler in App
@@ -23,7 +25,17 @@ const Stats = ({ viewStats, setViewStats, fetchEntries }) => {
   } else {
     return (
       <Card>
-        <h1>Test</h1>
+        <div>
+          {entries.map((entry) => {
+            console.log(entry);
+            const date = new Date(entry.date);
+            const day = date.getDate();
+            const month = date.getMonth();
+            const year = date.getFullYear();
+            const dateString = `${day}/${month}/${year}`;
+            return <div>{dateString}</div>;
+          })}
+        </div>
       </Card>
     );
   }
