@@ -53,7 +53,17 @@ app.get("/things/view/:id", async (req, res) => {
   const entries = await thingsModel.getByID(id);
   // console.log("entries from db: ", entries); // ok
 
-  res.status(200).send(JSON.stringify(entries));
+  const formattedEntries = entries.map((entry) => {
+    const date = new Date(entry.date);
+    const day = date.getDate();
+    const month = date.getMonth();
+    const year = date.getFullYear();
+    const dateString = `${day}/${month}/${year}`;
+
+    return { ...entry, date: dateString };
+  });
+
+  res.status(200).send(JSON.stringify(formattedEntries));
 });
 
 // ***** LISTEN ********

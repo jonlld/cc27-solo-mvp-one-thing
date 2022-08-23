@@ -27,13 +27,13 @@ const Stats = ({ viewStats, setViewStats, fetchEntries, entries }) => {
       <Card>
         <div>
           {entries.map((entry) => {
-            console.log(entry);
-            const date = new Date(entry.date);
-            const day = date.getDate();
-            const month = date.getMonth();
-            const year = date.getFullYear();
-            const dateString = `${day}/${month}/${year}`;
-            return <div>{dateString}</div>;
+            return (
+              <div>
+                <p>
+                  {entry.name}: {entry.item}, {entry.date}
+                </p>
+              </div>
+            );
           })}
         </div>
       </Card>
