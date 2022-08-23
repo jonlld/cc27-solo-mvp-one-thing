@@ -1,9 +1,19 @@
 .entry-container {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  background-color: blue;
+  margin-bottom: 12px;
 }
 
 .name-container {
+  color: #fff;
+  background-color: var(--reddish);
 }
 
 .date-container {
+  color: #fff;
+  background-color: var(--light-navy);
   /*  */
 }

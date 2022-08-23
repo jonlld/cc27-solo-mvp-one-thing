@@ -1,34 +1,15 @@
-/* adjusting reusable component to vertically stack */
-.flexColumn {
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.header {
-  text-align: center;
-  color: var(--reddish);
-}
-
-header {
-  width: 90%;
-}
-
-/* adjust <hr> styling */
-.separator {
-  width: 100%;
-  size: 12px;
-  border: 0.5px solid var(--dark-navy);
-}
+/* ***************** CHECKED-IN SCREEN *****************  */
 
 .title {
   font-size: 38px;
   text-transform: uppercase;
 }
 
-.greeting {
+/* .greeting {
   color: var(--dark-navy);
-}
+} */
 
+/* BUTTON */
 .stats {
   padding: 0;
   background-color: transparent;
@@ -39,4 +20,33 @@ header {
 .stats:hover {
   text-decoration: underline;
   background-color: transparent;
+}
+
+/* ***************** ENTRIES SCREEN *****************  */
+
+/* adjust <Card> to stack vertically */
+.flexColumn {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.header {
+  width: 100%;
+}
+
+.header h1 {
+  text-align: center;
+  color: var(--reddish);
+}
+
+/* adjust <hr> styling */
+.header hr {
+  width: 100%;
+  size: 12px;
+  border: 0.5px solid var(--dark-navy);
+}
+
+.entries-container {
+  width: 100%;
+  background-color: pink;
 }

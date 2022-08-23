@@ -6,6 +6,7 @@ import classes from "./Stats.module.css";
 
 const Stats = ({ viewStats, fetchEntries, entries }) => {
   if (!viewStats) {
+    // ***** CHECKED-IN VIEW
     return (
       <Card>
         <div>
@@ -17,16 +18,17 @@ const Stats = ({ viewStats, fetchEntries, entries }) => {
       </Card>
     );
   } else {
+    // ***** ENTRIES VIEW
     const userGreeting = `Hey, ${entries[0].name}. Good job on this!`;
 
     return (
       <Card className={classes.flexColumn}>
         {/* TODO make header sticky */}
-        <header>
-          <h1 className={classes.header}>{userGreeting}</h1>
-          <hr className={classes.separator} />
+        <header className={classes.header}>
+          <h1>{userGreeting}</h1>
+          <hr />
         </header>
-        <div>
+        <div className={classes["entries-container"]}>
           {entries.map((entry) => {
             return <Entry entry={entry} />;
           })}
