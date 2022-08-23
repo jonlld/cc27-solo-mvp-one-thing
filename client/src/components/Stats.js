@@ -4,7 +4,7 @@ import Entry from "./Entry";
 
 import classes from "./Stats.module.css";
 
-const Stats = ({ viewStats, fetchEntries, entries, logout }) => {
+const Stats = ({ viewStats, fetchEntries, entries, totalEntries, logout }) => {
   if (!viewStats) {
     // ***** CHECKED-IN VIEW
     return (
@@ -19,17 +19,19 @@ const Stats = ({ viewStats, fetchEntries, entries, logout }) => {
     );
   } else {
     // ***** ENTRIES VIEW
-    const userGreeting = `Hey, ${entries[0].name}. Great job on this!`;
+    const userGreeting = `Hey, ${entries[0].name}.
+    You have tallied ${totalEntries} times! Great job!`;
 
     return (
       <Card className={classes["card-adjust"]}>
         <header className={classes.header}>
           <h1>
-            {userGreeting}{" "}
-            <a className={classes.logout} onClick={logout}>
-              logout
-            </a>
+            {entries[0].name}, you've rocked it <span>{totalEntries}</span>{" "}
+            times. <span>That's awesome!</span>
           </h1>
+          <a className={classes.logout} onClick={logout}>
+            logout
+          </a>
           <hr />
         </header>
         <div className={classes["entries-container"]}>

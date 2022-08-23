@@ -55,7 +55,7 @@ const App = () => {
         viewStats={isViewStats}
         fetchEntries={fetchEntriesHandler}
         entries={entries}
-        totalOfEntries={numOfEntries}
+        totalEntries={numOfEntries}
         logout={logoutHandler}
       />
     );
