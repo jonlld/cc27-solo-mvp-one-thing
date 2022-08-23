@@ -1,5 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import Card from "../UI/Card";
+
+import { API_URL } from "../config";
+
 import classes from "./Main.module.css";
 
 const greetings = ["Hi", "Go", "Yo", "Konnichiwa", "Hola"];
@@ -29,11 +32,7 @@ const Main = ({ username, userId, onCheckedIn }) => {
         },
       };
 
-      const res = await fetch(
-        // "https://one-thing-server.herokuapp.com/things/save",
-        "http://localhost:3030/things/save",
-        options
-      );
+      const res = await fetch(`${API_URL}/things/save`, options);
       const data = await res.json();
 
       // update checked-in state

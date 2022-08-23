@@ -1,5 +1,8 @@
 import React, { useState, useRef } from "react";
 import Card from "../UI/Card";
+
+import { API_URL } from "../config";
+
 import classes from "./Login.module.css";
 
 const Login = (props) => {
@@ -27,11 +30,7 @@ const Login = (props) => {
     };
 
     // backend check for credentials
-    const res = await fetch(
-      // "https://one-thing-server.herokuapp.com/users/login",
-      "http://localhost:3030/users/login",
-      options
-    );
+    const res = await fetch(`${API_URL}/users/login`, options);
     const data = await res.json();
 
     // log data and update state based on server response!

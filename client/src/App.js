@@ -3,6 +3,8 @@ import Login from "./components/Login";
 import Main from "./components/Main";
 import Stats from "./components/Stats";
 
+import { API_URL } from "./config";
+
 // global CSS
 import "./index.css";
 
@@ -20,13 +22,9 @@ const App = () => {
   // Fetch entries when isViewStats updated
   const fetchEntriesHandler = async () => {
     // fetch data
-    const res = await fetch(
-      // `https://one-thing-server.herokuapp.com/things/view/${loggedInUserId}`,
-      `http://localhost:3030/things/view/${loggedInUserId}`,
-      {
-        method: "GET",
-      }
-    );
+    const res = await fetch(`${API_URL}/things/view/${loggedInUserId}`, {
+      method: "GET",
+    });
     const data = await res.json();
 
     // use data to set state
