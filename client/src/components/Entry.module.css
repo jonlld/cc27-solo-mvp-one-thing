@@ -2,18 +2,28 @@
   padding: 24px;
   display: flex;
   justify-content: space-between;
-  gap: 50px;
-  background-color: blue;
+  gap: 8px;
+  /* background-color: var(--grey); */
+  /* border-radius: 5px; */
   margin-bottom: 12px;
 }
 
-.name-container {
+.item-container {
+  flex: 3;
+  padding: 12px;
+  text-align: center;
   color: #fff;
   background-color: var(--reddish);
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(204, 204, 204, 0.419);
 }
 
 .date-container {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
   color: #fff;
   background-color: var(--light-navy);
-  /*  */
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(204, 204, 204, 0.419);
 }

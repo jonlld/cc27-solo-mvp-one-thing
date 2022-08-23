@@ -7,7 +7,7 @@ const Entry = ({ entry }) => {
 
   return (
     <div className={classes["entry-container"]}>
-      <div className={classes["name-container"]}>
+      <div className={classes["item-container"]}>
         <h3>{item}</h3>
       </div>
       <div className={classes["date-container"]}>

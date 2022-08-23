@@ -44,9 +44,9 @@
   width: 100%;
   size: 12px;
   border: 0.5px solid var(--dark-navy);
+  margin-bottom: 34px;
 }
 
 .entries-container {
   width: 100%;
-  background-color: pink;
 }
