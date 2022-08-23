@@ -47,7 +47,7 @@ const Login = (props) => {
 
   return (
     <Card>
-      <h1>One | Thing</h1>
+      <h1 className={classes.title}>One | Thing</h1>
       <form
         className={`${classes["form-control"]} ${isError && classes.error}`}
         onSubmit={loginHandler}
