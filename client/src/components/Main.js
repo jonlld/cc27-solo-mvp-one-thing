@@ -21,7 +21,7 @@ const Main = ({ username, userId }) => {
 
     const options = {
       method: "POST",
-      body: JSON.stringify({ thing: thing }),
+      body: JSON.stringify({ thing: thing, id: userId }),
       headers: {
         "Content-Type": "application/json",
       },
