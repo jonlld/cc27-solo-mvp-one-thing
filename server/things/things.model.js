@@ -9,7 +9,7 @@ module.exports = {
       .then((res) => res[0]);
   },
 
-  getbyID: function (id) {
+  getByID: function (id) {
     return knex
       .select({
         name: "name",

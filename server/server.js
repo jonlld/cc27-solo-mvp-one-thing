@@ -16,8 +16,6 @@ app.use(express.urlencoded({ extended: true })); // form-encoded
 
 // ***** ROUTES *********
 
-// probably don't need controller / model here as small - keep logic here for now!
-
 // USERS
 
 // login
@@ -52,10 +50,10 @@ app.get("/things/view/:id", async (req, res) => {
   const id = parseInt(req.params.id);
   // console.log("get request received, id:", id); // ok
 
-  const entries = await thingsModel.getbyID(id);
-  console.log("entries from db: ", entries);
+  const entries = await thingsModel.getByID(id);
+  // console.log("entries from db: ", entries); // ok
 
-  // res.status(200).send(JSON.stringify(entries));
+  res.status(200).send(JSON.stringify(entries));
 });
 
 // ***** LISTEN ********

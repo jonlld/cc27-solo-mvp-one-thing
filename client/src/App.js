@@ -18,24 +18,29 @@ const App = () => {
   const [entries, setEntries] = useState([]);
 
   // Fetch entries when isViewStats updated
-  useEffect(() => {
-    if (isViewStats) {
-      // fetch data
-      const data = fetch(
-        `http://localhost:3030/things/view/${loggedInUserId}`,
-        {
-          method: "GET",
-        }
-      ).then((res) => res.json());
+  const fetchEntriesHandler = async () => {
+    // fetch data
+    const res = await fetch(
+      `http://localhost:3030/things/view/${loggedInUserId}`,
+      {
+        method: "GET",
+      }
+    );
+    const data = await res.json();
 
-      // use data to set state
-      setEntries(data);
-    }
-  }, [isViewStats]);
+    // use data to set state
+    console.log("data received from server: ", data);
+  };
 
   // Conditional Renders for Stats, or Login / Main
   if (isCheckedIn) {
-    return <Stats viewStats={isViewStats} onViewStats={setIsViewStats} />;
+    return (
+      <Stats
+        viewStats={isViewStats}
+        setViewStats={setIsViewStats}
+        fetchEntries={fetchEntriesHandler}
+      />
+    );
   } else {
     return (
       <div>

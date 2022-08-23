@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import Card from "../UI/Card";
 import classes from "./Stats.module.css";
 
-const Stats = ({ viewStats, onViewStats }) => {
+const Stats = ({ viewStats, setViewStats, fetchEntries }) => {
   const viewStatsHandler = (e) => {
-    onViewStats(true);
+    setViewStats(true);
+    // trigger fetch request handler in App
+    fetchEntries();
   };
 
   if (!viewStats) {
