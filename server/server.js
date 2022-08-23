@@ -38,17 +38,16 @@ app.post("/users/login", async (req, res) => {
 // add entry to db
 app.post("/things/save", async (req, res) => {
   const { thing, id } = req.body;
-  console.log("thing in server: ", thing); // string
-  console.log("id in server: ", id); // string
+  // console.log("thing in server: ", thing); // string - ok
+  // console.log("id in server: ", id); // string - ok
 
   const payload = {
     description: thing,
     user_id: id,
   };
 
-  // const newEntry = await thingsModel.create(payload);
-
-  // console.log("added to db: ", newEntry);
+  const newEntry = await thingsModel.create(payload);
+  console.log("added to db: ", newEntry);
 });
 
 // ***** LISTEN ********
