@@ -51,7 +51,9 @@ const Main = ({ username, userId, onCheckedIn }) => {
       </div>
       <div>
         <form className={classes["form-control"]} onSubmit={submitHandler}>
-          <label htmlFor="thing">Choose your thing!</label>
+          <label htmlFor="thing" className={classes.choose}>
+            Choose your thing!
+          </label>
           <input
             type="text"
             id="thing"

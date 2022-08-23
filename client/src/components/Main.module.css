@@ -13,13 +13,13 @@
   justify-content: space-around;
 }
 
+.choose {
+  color: var(--reddish);
+}
+
 .form-control {
   position: relative;
   padding: 20px;
-}
-
-.form-control.error label {
-  color: var(--reddish);
 }
 
 /* descendent selectors */

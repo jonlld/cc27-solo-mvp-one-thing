@@ -5,7 +5,10 @@ import classes from "./Stats.module.css";
 const Stats = () => {
   return (
     <Card>
-      <h1>All done!</h1>
+      <div>
+        <h1 className={classes.title}>All Done!</h1>
+        <button className={classes.stats}>View Stats</button>
+      </div>
     </Card>
   );
 };
