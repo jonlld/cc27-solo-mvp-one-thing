@@ -11,6 +11,8 @@ const Stats = ({ viewStats, setViewStats, fetchEntries, entries }) => {
     fetchEntries();
   };
 
+  const userGreeting = `Hey, ${entries[0].name}. Good job on this!`;
+
   if (!viewStats) {
     return (
       <Card>
@@ -24,16 +26,15 @@ const Stats = ({ viewStats, setViewStats, fetchEntries, entries }) => {
     );
   } else {
     return (
-      <Card>
+      <Card className={classes.flexColumn}>
+        {/* make sticky */}
+        <header>
+          <h1 className={classes.header}>{userGreeting}</h1>
+          <hr className={classes.separator} />
+        </header>
         <div>
           {entries.map((entry) => {
-            return (
-              <div>
-                <p>
-                  {entry.name}: {entry.item}, {entry.date}
-                </p>
-              </div>
-            );
+            return <Entry entry={entry} />;
           })}
         </div>
       </Card>

@@ -1,5 +1,13 @@
 import React, { useState } from "react";
 
-const Entry = (props) => {};
+import classes from "./Entry.module.css";
+
+const Entry = ({ entry }) => {
+  const { date, item, name } = entry;
+
+  return;
+
+  <div className={classes.container}></div>;
+};
 
 export default Entry;

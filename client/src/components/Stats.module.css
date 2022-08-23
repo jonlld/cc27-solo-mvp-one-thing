@@ -1,3 +1,25 @@
+/* adjusting reusable component to vertically stack */
+.flexColumn {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.header {
+  text-align: center;
+  color: var(--reddish);
+}
+
+header {
+  width: 90%;
+}
+
+/* adjust <hr> styling */
+.separator {
+  width: 100%;
+  size: 12px;
+  border: 0.5px solid var(--dark-navy);
+}
+
 .title {
   font-size: 38px;
   text-transform: uppercase;
