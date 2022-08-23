@@ -13,8 +13,8 @@ const App = () => {
   const [loggedInUserId, setLoggedInUserId] = useState("");
 
   // Stats State
-  const [isCheckedIn, setIsCheckedIn] = useState(false);
-  const [isViewStats, setIsViewStats] = useState(false);
+  const [isCheckedIn, setIsCheckedIn] = useState(false); // show checked-in
+  const [isViewStats, setIsViewStats] = useState(false); // show entries
   const [entries, setEntries] = useState([]);
 
   // Fetch entries when isViewStats updated

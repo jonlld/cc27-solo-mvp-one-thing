@@ -5,7 +5,7 @@ import Entry from "./Entry";
 import classes from "./Stats.module.css";
 
 const Stats = ({ viewStats, fetchEntries, entries }) => {
-  const userGreeting = `Hey, ${entries[0].name}. Good job on this!`;
+  // const userGreeting = `Hey, ${entries[0].name}. Good job on this!`;
 
   if (!viewStats) {
     return (
@@ -23,7 +23,7 @@ const Stats = ({ viewStats, fetchEntries, entries }) => {
       <Card className={classes.flexColumn}>
         {/* TODO make header sticky */}
         <header>
-          <h1 className={classes.header}>{userGreeting}</h1>
+          {/* <h1 className={classes.header}>{userGreeting}</h1> */}
           <hr className={classes.separator} />
         </header>
         <div>
