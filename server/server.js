@@ -50,10 +50,11 @@ app.post("/things/save", async (req, res) => {
 
 app.get("/things/view/:id", async (req, res) => {
   const id = parseInt(req.params.id);
-  console.log("get request received, id:", id);
+  // console.log("get request received, id:", id); // ok
 
-  // const entries = await thingsModel.getAll();
-  // console.log("entries from db: ", entries);
+  const entries = await thingsModel.getbyID(id);
+  console.log("entries from db: ", entries);
+
   // res.status(200).send(JSON.stringify(entries));
 });
 

@@ -9,16 +9,19 @@ module.exports = {
       .then((res) => res[0]);
   },
 
-  getAll: function () {
-    return knex
-      .select({
-        name: "name",
-        item: "description",
-        date: "checked_in",
-        archived: "archived",
-      })
-      .from(THINGS_TABLE)
-      .join(USERS_TABLE, "users.id", "things.user_id")
-      .orderBy("date");
+  getbyID: function (id) {
+    return (
+      knex
+        .select({
+          // name: "name",
+          item: "description",
+          date: "checked_in",
+          archived: "archived",
+          userID: "user_id",
+        })
+        .from(THINGS_TABLE)
+        // .join(USERS_TABLE, "users.id", "=", "things.user_id")
+        .where("user_id", id)
+    );
   },
 };
