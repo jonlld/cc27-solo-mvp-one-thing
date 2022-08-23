@@ -19,6 +19,8 @@ const App = () => {
   const [isViewStats, setIsViewStats] = useState(false); // show entries
   const [entries, setEntries] = useState([]);
 
+  const [numOfEntries, setNumOfEntries] = useState(0);
+
   // Fetch entries when isViewStats updated
   const fetchEntriesHandler = async () => {
     // fetch data
@@ -27,9 +29,12 @@ const App = () => {
     });
     const data = await res.json();
 
-    // use data to set state
-    setEntries(data);
+    // get total # of entries by loggedInUser
+    const numEntries = data.reduce((count, curr) => ++count, 0);
 
+    // update state
+    setEntries(data);
+    setNumOfEntries(numEntries);
     setIsViewStats(true);
   };
 
@@ -50,6 +55,7 @@ const App = () => {
         viewStats={isViewStats}
         fetchEntries={fetchEntriesHandler}
         entries={entries}
+        totalOfEntries={numOfEntries}
         logout={logoutHandler}
       />
     );
