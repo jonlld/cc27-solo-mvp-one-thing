@@ -28,7 +28,10 @@ const Login = (props) => {
 
     // backend check for credentials - hardcode local host for now
     // /users/save = backlog
-    const res = await fetch("http://localhost:3030/users/login", options);
+    const res = await fetch(
+      "https://one-thing-server.herokuapp.com/users/login",
+      options
+    );
     const data = await res.json();
 
     // log data and update state based on server response!

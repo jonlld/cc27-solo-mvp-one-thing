@@ -29,7 +29,10 @@ const Main = ({ username, userId, onCheckedIn }) => {
         },
       };
 
-      const res = await fetch("http://localhost:3030/things/save", options);
+      const res = await fetch(
+        "https://one-thing-server.herokuapp.com/things/save",
+        options
+      );
       const data = await res.json();
 
       // update checked-in state

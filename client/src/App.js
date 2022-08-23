@@ -21,7 +21,7 @@ const App = () => {
   const fetchEntriesHandler = async () => {
     // fetch data
     const res = await fetch(
-      `http://localhost:3030/things/view/${loggedInUserId}`,
+      `https://one-thing-server.herokuapp.com/things/view/${loggedInUserId}`,
       {
         method: "GET",
       }
