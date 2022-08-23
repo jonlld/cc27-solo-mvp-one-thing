@@ -10,7 +10,9 @@ const Stats = ({ viewStats, fetchEntries, entries, totalEntries, logout }) => {
     return (
       <Card>
         <div>
-          <h1 className={classes.title}>All | Done</h1>
+          <h1 className={classes.title}>
+            All <span>|</span> Done
+          </h1>
           <button className={classes.stats} onClick={fetchEntries}>
             View Stats?
           </button>

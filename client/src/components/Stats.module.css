@@ -5,6 +5,10 @@
   text-transform: uppercase;
 }
 
+.title span {
+  color: var(--reddish);
+}
+
 /* LOGOUT LINK */
 .logout {
   cursor: pointer;
