@@ -29,12 +29,14 @@
 }
 
 button {
+  margin-top: 24px;
+  width: 100%;
   font: inherit;
   border: none;
   border-radius: 5px;
   background: var(--light-navy);
   color: #fff;
-  padding: 6px 22px;
+  padding: 11px 22px;
   cursor: pointer;
 }
 
