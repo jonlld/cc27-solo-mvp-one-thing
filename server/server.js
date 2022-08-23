@@ -38,8 +38,6 @@ app.post("/users/login", async (req, res) => {
 // add entry to db
 app.post("/things/save", async (req, res) => {
   const { thing, id } = req.body;
-  // console.log("thing in server: ", thing); // string - ok
-  // console.log("id in server: ", id); // string - ok
 
   const payload = {
     description: thing,
@@ -47,7 +45,7 @@ app.post("/things/save", async (req, res) => {
   };
 
   const newEntry = await thingsModel.create(payload);
-  console.log("added to db: ", newEntry);
+  res.status(200).send(JSON.stringify(newEntry));
 });
 
 // ***** LISTEN ********

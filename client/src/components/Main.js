@@ -28,10 +28,10 @@ const Main = ({ username, userId }) => {
     };
 
     const res = await fetch("http://localhost:3030/things/save", options);
-    // const data = await res.json();
+    const data = await res.json();
 
     // // TODO update state once saved to db
-    // console.log(data);
+    console.log(data); // ok
   };
 
   // Card is a flex container
