@@ -18,7 +18,6 @@ app.use(express.urlencoded({ extended: true })); // form-encoded
 
 // USERS
 
-// login
 app.post("/users/login", async (req, res) => {
   const { name, pswd } = req.body;
 
@@ -33,7 +32,6 @@ app.post("/users/login", async (req, res) => {
 
 // THINGS
 
-// add entry to db
 app.post("/things/save", async (req, res) => {
   const { thing, id } = req.body;
 
@@ -48,10 +46,8 @@ app.post("/things/save", async (req, res) => {
 
 app.get("/things/view/:id", async (req, res) => {
   const id = parseInt(req.params.id);
-  // console.log("get request received, id:", id); // ok
 
   const entries = await thingsModel.getByID(id);
-  // console.log("entries from db: ", entries); // ok
 
   const formattedEntries = entries.map((entry) => {
     const date = new Date(entry.date);
