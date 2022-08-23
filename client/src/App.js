@@ -21,9 +21,12 @@ const App = () => {
   useEffect(() => {
     if (isViewStats) {
       // fetch data
-      const data = fetch("http://localhost:3030/things/view", {
-        method: "GET",
-      }).then((res) => res.json());
+      const data = fetch(
+        `http://localhost:3030/things/view/${loggedInUserId}`,
+        {
+          method: "GET",
+        }
+      ).then((res) => res.json());
 
       // use data to set state
       setEntries(data);

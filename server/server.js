@@ -48,9 +48,13 @@ app.post("/things/save", async (req, res) => {
   res.status(200).send(JSON.stringify(newEntry));
 });
 
-app.get("/things/view", async (req, res) => {
-  const entries = await thingsModel.getAll();
-  res.status(200).send(JSON.stringify(entries));
+app.get("/things/view/:id", async (req, res) => {
+  const id = parseInt(req.params.id);
+  console.log("get request received, id:", id);
+
+  // const entries = await thingsModel.getAll();
+  // console.log("entries from db: ", entries);
+  // res.status(200).send(JSON.stringify(entries));
 });
 
 // ***** LISTEN ********
