@@ -44,7 +44,9 @@ const Main = ({ username, userId, onCheckedIn }) => {
   return (
     <Card>
       <div>
-        <h1 className={classes.title}>One | Thing</h1>
+        <h1 className={classes.title}>
+          One <span className={classes.accent}>|</span> Thing
+        </h1>
         <p className={classes.greeting}>
           {randomGreeting}, {username}!
         </p>
@@ -57,7 +59,7 @@ const Main = ({ username, userId, onCheckedIn }) => {
           <input
             type="text"
             id="thing"
-            placeholder="My focus is..."
+            placeholder="Today I will..."
             ref={thingInputRef}
           />
           <button type="submit" className={classes["check-in-button"]}>

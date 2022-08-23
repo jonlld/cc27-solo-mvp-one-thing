@@ -3,8 +3,15 @@
   text-transform: uppercase;
 }
 
+.accent {
+  color: var(--reddish);
+}
+
 .greeting {
-  color: var(--dark-navy);
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--reddish);
 }
 
 .submit-container {
@@ -14,7 +21,8 @@
 }
 
 .choose {
-  color: var(--reddish);
+  font-weight: bold;
+  display: block;
 }
 
 .form-control {
@@ -24,17 +32,21 @@
 
 /* descendent selectors */
 .form-control label {
+  text-transform: uppercase;
+  font-size: 24px;
+  color: var(--reddish);
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 12px;
 }
 
 .form-control input {
   width: 100%;
-  padding: 8px 16px;
-  margin-bottom: 24px;
+  padding: 12px 5px;
+  margin-bottom: 90px;
 }
 
 .check-in-button {
-  border-radius: 50%;
-  padding: 60px;
+  width: 100%;
+  font-size: 24px;
+  padding: 10px;
 }

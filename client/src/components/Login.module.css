@@ -3,6 +3,10 @@
   text-transform: uppercase;
 }
 
+.accent {
+  color: var(--reddish);
+}
+
 .form-control {
   position: relative;
   padding: 20px;
@@ -36,7 +40,7 @@ button {
 
 button:hover,
 button:active {
-  background: var(--dark-navy);
+  background: var(--reddish);
 }
 
 button:focus {
