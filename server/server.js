@@ -48,6 +48,11 @@ app.post("/things/save", async (req, res) => {
   res.status(200).send(JSON.stringify(newEntry));
 });
 
+app.get("/things/view", async (req, res) => {
+  const entries = await thingsModel.getAll();
+  res.status(200).send(JSON.stringify(entries));
+});
+
 // ***** LISTEN ********
 
 app.listen(PORT, () => {
